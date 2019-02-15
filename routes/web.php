@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ShortenedLinksController@index')->name('shortened-links.index');
+Route::post('/', 'ShortenedLinksController@store')->name('shortened-links.store');
+Route::get('/{link}', 'ShortenedLinksController@redirect')->name('shortened-links.redirect');
